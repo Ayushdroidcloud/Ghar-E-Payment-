@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gharik Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Hello, {{ name }}</h2>
+        <p><strong>Balance:</strong> 𑁍{{ balance }}</p>
+
+        <h3>Send Money</h3>
+        <form method="POST" action="/send">
+            <input type="hidden" name="sender" value="{{ identifier }}">
+            <input type="text" name="receiver" placeholder="Recipient (Email or Phone)" required>
+            <input type="number" name="amount" placeholder="Amount in Gharik" required>
+            <button type="submit">Send</button>
+        </form>
+
+        <a href="/convert" class="link">𑁍 View Conversion Rate</a>
+    </div>
+</body>
+</html>
