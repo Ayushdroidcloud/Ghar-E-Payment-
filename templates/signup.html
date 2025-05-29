@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Signup | Gharik Wallet</title>
+    <title>Gharik Wallet - Signup</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h2>Sign Up for Gharik Wallet</h2>
-    <form action="/create_account" method="POST">
-        <input type="text" name="identifier" placeholder="Email or Phone Number" required>
-        <input type="text" name="name" placeholder="Your Full Name" required>
-        <button type="submit">Next</button>
-    </form>
+    <div class="container">
+        <h2>Create New Account</h2>
+        <form method="POST" action="/signup_submit">
+            <input type="text" name="identifier" value="{{ identifier }}" placeholder="Email or Phone" required>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="password" name="password" placeholder="Create Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
 </body>
 </html>
