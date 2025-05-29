@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction Successful</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>✅ Transfer Successful!</h2>
+        <p><strong>From:</strong> {{ sender }}</p>
+        <p><strong>To:</strong> {{ receiver }}</p>
+        <p><strong>Amount:</strong> 𑁍{{ amount }}</p>
+        <a href="/dashboard/{{ sender }}">🔙 Go back to Dashboard</a>
+    </div>
+</body>
+</html>
