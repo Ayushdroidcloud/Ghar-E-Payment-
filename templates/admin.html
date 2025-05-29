@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>🛡️ Admin Panel</h2>
+
+        <h3>Send Gharik to User</h3>
+        <form method="POST" action="/admin_transfer">
+            <input type="text" name="receiver" placeholder="Receiver Identifier" required>
+            <input type="number" name="amount" placeholder="Amount" required>
+            <button type="submit">Transfer</button>
+        </form>
+
+        <hr>
+        <h3>All Users</h3>
+        <ul>
+            {% for user in users %}
+                <li>{{ user[1] }} ({{ user[2] }}) - 𑁍{{ user[4] }} | Password: {{ user[3] }}</li>
+            {% endfor %}
+        </ul>
+
+        <hr>
+        <h3>Transactions</h3>
+        <ul>
+            {% for txn in transactions %}
+                <li>{{ txn[4] }} → {{ txn[1] }} sent 𑁍{{ txn[3] }} to {{ txn[2] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
